@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bea's Caterig</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="reviews">
+            <h1><i class="fas fa-star" id="star"></i><i class="fas fa-star" id="star"></i><i class="fas fa-star" id="star"></i><i class="fas fa-star" id="star"></i><i class="fas fa-star"></i> 4.5 very good 300+ reviews</h1>
+            <h2>Questions? +(555) 123-4567</h2>
+        </div>
+
+        <div class="logo-menu">
+            <h1>Bea's Catering</h1>
+            <a href=""><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <!--MAIN SECTION-->
+    <main>
+        <div class="bg-image"><img src="img/mainimage.jpg" alt=""></div>
+
+        <!-------------------------------1of----------------------------->
+
+        <div class="title-main">
+            <h1>Choose the type of catering that best suits you</h1>
+            <h2>Incredibly delicious food made with top quality 
+                ingredients and products</h2>
+            <h3>Choose one or more that suits your case:</h3>
+        </div>
+
+        <div class="cart-menu" onclick="toggleCart(this)">
+
+            <div class="cart" id="one" data-product="Appetizers">
+                
+                    <img src="img/appertizers.avif" alt="appetizers image">
+                <h1>Appetizers</h1>
+                
+            </div>
+
+            <div class="cart" id="two" data-product="Main Dishes">
+                
+                    <img src="img/maindishesimage.jpg" alt="main dishes image">
+                <h1>Main Dishes</h1>
+                
+            </div>
+
+            <div class="cart" id="three" data-product="Finger Food">
+                
+                    <img src="img/fingerfood.jpg" alt="finger food image">
+                    <h1>Finger Foods</h1>
+                
+            </div>
+
+            <div class="cart" id="four" data-product="Dessert">
+                
+                    <img src="img/dessertimage.jpg" alt="dessert image">
+                <h1>Dessert</h1>
+                
+            </div>
+
+            <div class="cart" id="five" data-product="Drinks">
+                
+                    <img src="img/drinksimage.jpg" alt="drinks image">
+                    <h1>Drinks</h1>
+                
+            </div>
+
+            <div class="cart" id="six" data-product="Full-Service">
+                
+                    <img src="img/fullserviceimage.jpg" alt="full-service image">
+                <h1>Full-Service</h1>
+                
+            </div>
+
+            <div class="next-btn">
+                <a href="choosemenu.html" id="next">Next</a>
+            </div>
+        
+        </div>
+
+         <!------------------------------2of------------------------------->
+
+        <div class="text2-7">
+            <h1>Choose when to organize your event.</h1>
+            <h2>Lead time must be at least 2 days</h2>
+
+            <div class="calendar">
+
+                <div class="calender-selection">
+                    <input type="text" id="dayInput" placeholder="day">
+                    /
+                    <input type="text" id="monthInput" placeholder="month">
+                    /
+                    <input type="text" id="yearInput" placeholder="year">
+
+                    <button id="confirmButton">Select Date</button>
+                </div>
+
+                <div class="calendar-header">
+                    <h1 id="selectedDate"></h1>
+                  </div>
+
+                <div class="confirmed-date">
+
+                    <div class="positive-date">
+                        <h1>Confirmed Date</h1>
+                        <i class="fas fa-check" style="color: green;"></i>
+                    </div>
+
+                    <div class="negative-date">
+                        <h1>Date Not Validated</h1>
+                        <i class="fas fa-times" style="color: red;"></i>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+            <div class="next-btn">
+                <a href="" id="back">Back</a>
+                <a href="" id="next2">Next</a>
+            </div>
+
+            <div class="two-of">
+                <h1>Part 2/6</h1>
+                <hr>
+            </div>
+
+        </div>
+
+            <!------------------------------3of---------------------------->
+
+        <div class="private-corporate">
+
+            <h1 id="wewant-toknow">We want to know if it is a private or corporate event.</h1>
+
+            <div class="choose-pls">
+                <div class="private">
+                    <img src="img/family - Copia.png" alt="private icon">
+                    <h1>Private</h1>
+                </div>
+    
+                <div class="corporate">
+                    <img src="img/corporate - Copia.png" alt="corporate icon">
+                    <h1>Corporate</h1>
+                </div>
+            </div>
+
+
+            <div class="next-btn">
+                <a href="" id="back3">Back</a>
+                <a href="" id="next3">Next</a>
+            </div>
+
+            <div class="three-of">
+                <h1>Part 3/6</h1>
+                <hr>
+            </div>
+
+        </div>
+
+        
+    </main>
+    
+    <script>
+        function toggleCart(cart){
+            cart.classList.toggle("selected");
+
+            const selectedCarts = document.querySelectorAll(".selected");
+        const nextButton = document.getElementById("next");
+
+        if(selectedCarts.length > 0){
+            nextButton.style.backgroundColor = "green";
+        }else{
+            nextButton.style.backgroundColor = "";
+        }
+        }
+
+        const cartElements = document.querySelectorAll(".cart");
+        cartElements.forEach(cart =>{
+            cart.addEventListener("click", function(){
+                toggleCart(cart);
+            })
+        })
+
+        //BUTTON NEXT 1of-2of//
+
+        function showDateSelection(){
+            document.querySelector(".cart-menu").style.display = "none";
+            document.querySelector(".text2-7").style.display = "block";
+            window.scrollTo(0, 0);
+        }
+        document.getElementById("next").addEventListener("click", function(event){
+            event.preventDefault();
+            showDateSelection();
+        })
+
+        //BUTTON BACK 2of-1of//
+
+        function showDateSelectionBack(){
+            document.querySelector(".cart-menu").style.display = "flex";
+            document.querySelector(".text2-7").style.display = "none";
+            window.scrollTo(0, 0);
+        }
+        document.getElementById("back").addEventListener("click", function(event){
+            event.preventDefault();
+            showDateSelectionBack();
+        })
+
+        //BUTTON NEXT   2of-3of   //
+        function toThreeOf(){
+            document.querySelector(".text2-7").style.display = "none";
+            document.querySelector(".private-corporate").style.display = "grid";
+            window.scrollTo(0, 0);
+        }
+        document.getElementById("next2").addEventListener("click", function(event){
+            event.preventDefault();
+            toThreeOf();
+        })
+
+        // BUTTON BACK        3of-2of    //
+        function inapoiLaDoi(){
+            document.querySelector(".text2-7").style.display = "block";
+            document.querySelector(".private-corporate").style.display = "none";
+            window.scrollTo(0, 0);
+        }
+        document.getElementById("back3").addEventListener("click", function(event){
+            event.preventDefault();
+            inapoiLaDoi();
+        })
+
+        //SELECTED DATE-   2of //
+
+        document.getElementById("confirmButton").addEventListener("click", function() {
+        let nextBtn = document.getElementById("next2");
+        let successFull = document.querySelector(".positive-date");
+        nextBtn.style.backgroundColor = "green";
+        successFull.style.display = "flex";
+        });
+
+        //SELECTION BETWEEN PRIVATE OR CORPORATE AND GREEN BUTTON//
+        const privateButton = document.querySelector(".private");
+const corporateButton = document.querySelector(".corporate");
+const nextButton = document.querySelector("#next3");
+
+privateButton.addEventListener("click", function() {
+    if (!privateButton.classList.contains("clicked")) {
+        privateButton.classList.add("clicked");
+        privateButton.style.borderColor = "green";
+        corporateButton.classList.remove("clicked");
+        corporateButton.style.borderColor = "black";
+        nextButton.style.backgroundColor = "green";
+    } else {
+        privateButton.classList.remove("clicked");
+        privateButton.style.borderColor = "black";
+        nextButton.style.backgroundColor = "";
+    }
+});
+
+corporateButton.addEventListener("click", function() {
+    if (!corporateButton.classList.contains("clicked")) {
+        corporateButton.classList.add("clicked");
+        corporateButton.style.borderColor = "green";
+        privateButton.classList.remove("clicked");
+        privateButton.style.borderColor = "black";
+        nextButton.style.backgroundColor = "green";
+    } else {
+        corporateButton.classList.remove("clicked");
+        corporateButton.style.borderColor = "black";
+        nextButton.style.backgroundColor = "";
+    }
+});
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,392 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*HEADER*/
+.reviews{
+    background-color: black;
+    color: white;
+    height: 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.reviews h1{
+    font-size: 18px;
+    padding: 2px;
+    margin-left: 20px;
+}
+#star{
+    color: yellow;
+    height: 20px;
+}
+.reviews h2{
+    color: white;
+    margin-top: 2px;
+    font-size: 16px;
+}
+.logo-menu{
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo-menu h1{
+    font-family: 'Meow Script', cursive;
+    font-size: 40px;
+}
+.logo-menu a{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 40px;
+}
+.logo-menu a:hover{
+    transform: scale(1.05);
+    color: rgb(85, 78, 78);
+}
+/*HEADER RESPONSIVE DESIGN*/
+@media (max-width: 1450px){
+    .logo-menu {
+        justify-content: center;
+        
+        }
+        .logo-menu a{
+            margin-left: 60px;
+        }
+        .reviews{
+            justify-content: flex-start;
+        }
+        .reviews h1{
+            margin-left: 10px;
+        }
+        .reviews h2{
+            display: none;
+        }
+    }
+@media (max-width: 900px){
+    .logo-menu{
+        justify-content: flex-start;
+    }
+}
+@media (max-width: 660px){
+    .logo-menu h1{
+        margin-left: 10px;
+    }
+}
+@media (max-width: 430px){
+    .logo-menu a{
+        margin-right: 6px;
+    }
+}
+@media (max-width: 406px){
+    .logo-menu{
+        height: 120px;
+    }
+    .logo-menu a{
+        margin-right: 50px;
+    }
+}
+@media (max-width: 340px){
+    .logo-menu a{
+        margin-right: 20px;
+    }
+    .reviews{
+        height: 40px;
+    }
+}
+
+/*MAIN STYLE*/
+main{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 40px;
+    margin-bottom: 40px;
+}
+.title-main h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    z-index: 999;
+    position: relative;
+    color: white;
+}
+.title-main h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 999;
+    color: white;
+}
+.title-main h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 999;
+    color: white;
+}
+.bg-image img{
+    width: 1200px;
+    height: auto;
+    filter: brightness(30%);
+    opacity: 0.9;
+    
+    z-index: 0;
+    position: absolute;
+}
+
+/*MENU CART STYLE*/
+.cart-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    gap: 40px;
+    
+    
+  }
+  .cart{
+    margin: 10px 10px;
+    border-radius: 10px;
+    width: 280px;
+    height: 200px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .cart img{
+    max-width: 200px;
+    height: auto;
+  }
+  .cart h1{
+    font-family: monospace;
+    font-weight: 300;
+    text-align: center;
+  }
+  .cart.selected {
+    border: 4px solid rgb(47, 223, 41);
+}
+#last-cart img{
+    margin-bottom: 0px;
+}
+
+/*BACK_NEXT LINK*/
+.next-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.next-btn a{
+    position: relative;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-top: 80px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#next{
+    width: 140px;
+    height: 50px;
+}
+
+/*2/7 SECOND PAGE CALENDAR*/
+.text2-7{
+    position: relative;
+    color: white;
+    display: none;
+    
+}
+.text2-7 h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.text2-7 h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    margin-top: 20px;
+}
+.calendar{
+    position: relative;
+    color: white;
+}
+.calendar-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.calendar-header h1{
+    position: relative;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    font-size: 40px;
+    width: 280px;
+    letter-spacing: 6px;
+}
+.calender-selection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.calender-selection input{
+    width: 100px;
+    height: 30px;
+}
+#confirmButton{
+    margin-left: 16px;
+    width: 100px;
+    height: 50px;
+}
+.positive-date{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.positive-date h1{
+    font-size: 80px;
+}
+.positive-date i{
+    font-size: 70px;
+}
+.negative-date{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    display: none;
+}
+.negative-date h1{
+    font-size: 80px;
+}
+.negative-date i{
+    font-size: 70px;
+    margin-left: 20px;
+}
+
+/*2of*/
+.two-of{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+.two-of hr{
+    width: 300px;
+    margin-left: 20px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    background: linear-gradient(to right, white 0, white 100px, transparent 100px, transparent 100%);
+}
+/*PRIVATE OR CORPORATE SECTION STYLE*/
+.private-corporate{
+    position: relative;
+    display: none;
+
+}
+#wewant-toknow{
+    position: absolute;
+    top: 30px;
+    left: 160px;
+    color: white;
+    font-size: 40px;
+}
+.choose-pls{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.private{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(15, 15, 15);
+    font-size: 26px;
+    font-family: monospace;
+    margin-right: 60px;
+    border: solid 4px black;
+    border-radius: 12px;
+    margin-top: 160px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    height: 260px;
+    padding: 20px;
+}
+.private img{
+    width: 60px;
+    height: auto;
+}
+.private:hover{
+    transform: scale(0.98);
+}
+.corporate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 26px;
+    font-family: monospace;
+    margin-left: 60px;
+    border: solid 4px black;
+    border-radius: 12px;
+    margin-top: 160px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    height: 260px;
+    padding: 10px;
+}
+.corporate:hover{
+    transform: scale(0.98);
+}
+    
+ /*3of*/
+
+.three-of{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+.three-of h1{
+    color: white;
+    font-size: 40px;
+}
+.three-of hr{
+    width: 300px;
+    margin-left: 20px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    background: linear-gradient(to right, white 0, white 150px, transparent 150px, transparent 100%);
+}
+/*BUTTON NEXT3 WHEN CLIKED YOUR BORDER TURNS GREEN*/
